@@ -16,22 +16,22 @@ namespace RockPaperSissors
             
             do
             {
-                Console.WriteLine("Please Enter Rock, Paper, or Sissors");
+                Console.WriteLine("Please Enter Rock, Paper, or Scissors");
             var input = Console.ReadLine();
             int cpuChoice = rng.Next(2);
                 input.ToLower();
 
-                if(input == "rock")
+                switch(input)
                 {
-                    Comparison.Rock(cpuChoice);
-                }
-                if (input == "scissors")
-                {
-                    Comparison.Scissors(cpuChoice);
-                }
-                if (input == "paper")
-                {
-                    Comparison.Paper(cpuChoice);
+                    case "rock":
+                        Comparison.Rock(cpuChoice);
+                        break;
+                    case "scissors":
+                        Comparison.Scissors(cpuChoice);
+                        break;
+                    case "paper":
+                        Comparison.Paper(cpuChoice);
+                        break;
                 }
                 Console.WriteLine("Play again? y/n");
                 string nextGame = Console.ReadLine();
