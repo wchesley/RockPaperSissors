@@ -33,36 +33,19 @@ namespace RockPaperSissors
                         Comparison.Paper(cpuChoice);
                         break;
                 }
-                Console.WriteLine("Play again? y/n");
+                Console.WriteLine("Play again? \nType N to quit, press any other key to play again");
                 string nextGame = Console.ReadLine();
-                char[] testArray = new char[1];
-                foreach (char c in nextGame)
+                char firstOf_nextGame;
+                
+                    firstOf_nextGame = nextGame[0];
+
+                switch (firstOf_nextGame.ToString())
                 {
-                    int i = 0;
-                    testArray.SetValue(c, i);
-                    i++;
-                }
-                if (testArray[0].ToString() != "y" || testArray[0].ToString() != "n" )
-                {
-                    Console.WriteLine("Play again? y/n");
-                    
-                    foreach (char c in nextGame)
-                    {
-                        int i = 0;
-                        testArray.SetValue(c, i);
-                        i++;
-                    }
-                }
-                //Console.WriteLine(nextGame.ToString());
-                switch (testArray[0].ToString().ToLower())
-                {
-                    case "y":
-                        continueGame = true;
-                        break;
                     case "n":
                         continueGame = false;
                         break;
                 }
+                
                 nextGame = string.Empty;
                 input = string.Empty;
                  
